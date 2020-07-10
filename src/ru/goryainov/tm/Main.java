@@ -1,5 +1,7 @@
 package ru.goryainov.tm;
 
+import static ru.goryainov.tm.constant.TerminalConst.*;
+
 /**
  * Тестовое приложение с поддержкой аргументов запуска
  */
@@ -14,9 +16,12 @@ public class Main {
         if (args == null) return;
         if (args.length < 1) return;
         final String param = args[0];
-        if ("version".equals(param)) displayVersion();
-        if ("about".equals(param)) displayAbout();
-        if ("help".equals(param)) displayHelp();
+        switch (param) {
+            case VERSION: displayVersion();
+            case ABOUT: displayAbout();
+            case HELP: displayHelp();
+            default: displayError();
+        }
     }
     private static void displayAbout(){
         System.out.println("Andrey Goryainov");
@@ -35,5 +40,9 @@ public class Main {
     }
     private static void displayWelcome(){
         System.out.println("-= WELCOME TO TASK MANAGER =-");
+    }
+    private static void displayError(){
+        System.out.println("Error! Unknown program argument...");
+        System.exit(-1);
     }
 }
