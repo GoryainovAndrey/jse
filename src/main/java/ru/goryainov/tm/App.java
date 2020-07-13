@@ -6,7 +6,7 @@ import static ru.goryainov.tm.constant.TerminalConst.*;
  * Тестовое приложение с поддержкой аргументов запуска
  */
 
-public class Main {
+public class App {
 
     public static void main(final String[] args) {
         run(args);
