@@ -11,20 +11,23 @@ import static ru.goryainov.tm.constant.TerminalConst.*;
 public class App {
     /**
      * Точка входа
-     * @param args  параметры запуска
+     *
+     * @param args параметры запуска
      */
     public static void main(final String[] args) {
         run(args);
         displayWelcome();
         final Scanner scanner = new Scanner(System.in);
         String command = "";
-        while (!EXIT.equals(command)){
+        while (!EXIT.equals(command)) {
             command = scanner.nextLine();
             run(command);
         }
     }
+
     /**
      * Запуск приложения
+     *
      * @param args массив параметров запуска
      */
     private static void run(final String[] args) {
@@ -34,20 +37,28 @@ public class App {
         final int result = run(param);
         System.exit(result);
     }
+
     /**
      * Запуск приложения
+     *
      * @param param параметр запуска
      */
     private static int run(final String param) {
         if (param == null) return -1;
         switch (param) {
-            case VERSION: return displayVersion();
-            case ABOUT: return displayAbout();
-            case HELP: return displayHelp();
-            case EXIT: return displayExit();
-            default: return displayError();
+            case VERSION:
+                return displayVersion();
+            case ABOUT:
+                return displayAbout();
+            case HELP:
+                return displayHelp();
+            case EXIT:
+                return displayExit();
+            default:
+                return displayError();
         }
     }
+
     /**
      * Вывод сведений о разработчике
      */
@@ -56,6 +67,7 @@ public class App {
         System.out.println("goryainov_aa@nlmk.ru");
         return 0;
     }
+
     /**
      * Вывод версии
      */
@@ -63,6 +75,7 @@ public class App {
         System.out.println("1.0.0");
         return 0;
     }
+
     /**
      * Вывод списка возможных параметров запуска
      */
@@ -73,12 +86,14 @@ public class App {
         System.out.println("exit - Terminate console application.");
         return 0;
     }
+
     /**
      * Вывод приветствия
      */
     private static void displayWelcome() {
         System.out.println("-= WELCOME TO TASK MANAGER =-");
     }
+
     /**
      * Вывод ошибки при вводе параметра запуска не из списка
      */
@@ -86,6 +101,7 @@ public class App {
         System.out.println("Error! Unknown program argument...");
         return -1;
     }
+
     /**
      * Вывод завершения приложения
      */
