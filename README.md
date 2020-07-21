@@ -1,5 +1,6 @@
 ## о программе
 Task-manager - программа для контроля выполнения задач
+## ссылка на репозиторий github  [ssh://git@github.com/GoryainovAndrey/jse.git](url)
 ## требования к software
 JDK 11
 ## стек технологий
