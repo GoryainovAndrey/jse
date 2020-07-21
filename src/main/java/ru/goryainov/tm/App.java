@@ -9,6 +9,7 @@ import static ru.goryainov.tm.constant.TerminalConst.*;
  */
 
 public class App {
+
     /**
      * Точка входа
      *
